@@ -1,6 +1,6 @@
 // /lib/db/schema.ts
 
-import { pgTable, serial, text, varchar, timestamp, integer } from 'drizzle-orm/pg-core';
+import { pgTable, serial, text, varchar, timestamp } from 'drizzle-orm/pg-core';
 
 // --- Existing Tables (Regions, Services, Projects, etc.) ---
 // ... (schema from the initial plan would be here)

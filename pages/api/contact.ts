@@ -14,7 +14,7 @@ const submissionSchema = z.object({
 
 type ResponseData = {
   message: string;
-  errors?: any;
+  errors?: Record<string, string[] | undefined>;
 };
 
 export default async function handler(

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Briefcase, MapPin, Phone, Mail, Users, CheckSquare, Award, BarChart, ChevronDown, Menu, X, Loader2, CheckCircle, AlertTriangle } from 'lucide-react';
+import { Briefcase, MapPin, Phone, Mail, Users, CheckSquare, Award, Menu, X, Loader2, CheckCircle, AlertTriangle } from 'lucide-react';
 
 // --- DATA (Same as before) ---
 const services = [
