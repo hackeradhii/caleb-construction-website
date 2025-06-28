@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Briefcase, MapPin, Phone, Mail, Users, CheckSquare, Award, Menu, X, Loader2, CheckCircle, AlertTriangle } from 'lucide-react';
+import Image from 'next/image';
 
 // --- DATA (Same as before) ---
 const services = [
@@ -53,8 +54,8 @@ const AnimatedCounter = ({ target }: { target: number }) => {
                     let start = 0;
                     const end = target;
                     if (start === end) return;
-                    let duration = 2000;
-                    let increment = end / (duration / 10);
+                    const duration = 2000;
+                    const increment = end / (duration / 10);
                     const timer = setInterval(() => {
                         start += increment;
                         if (start >= end) {
@@ -190,7 +191,7 @@ export default function App() {
             </svg>
 
             {/* --- CSS FOR NEW GLASS EFFECT --- */}
-            <style jsx="true" global="true">{`
+            <style jsx global>{`
                 .glassHeader {
                   position: fixed;
                   top: 16px;
@@ -270,7 +271,7 @@ export default function App() {
                     <div className="container mx-auto px-6 sm:px-8 lg:px-12">
                         <div className="flex items-center justify-between h-16">
                              <a href="#" onClick={smoothScroll('hero')} className="flex items-center">
-                                 <img src="/logo.png" alt="Caleb Construction Limited Logo" className="h-55 w-auto" />
+                                 <Image src="/logo.png" alt="Caleb Construction Limited Logo" width={220} height={55} className="h-55 w-auto" />
                              </a>
                             <nav className="hidden lg:flex items-center space-x-8">
                                 <a href="#services" onClick={smoothScroll('services')}>Services</a>
@@ -309,7 +310,7 @@ export default function App() {
                     <section id="hero" className="relative h-screen flex items-center justify-center pt-20" style={{ backgroundImage: "url(hero-background.jpg)", backgroundSize: '400px' }}>
                         <div className="absolute inset-0 bg-black/10"></div>
                         <div className="relative z-10 text-center text-white px-4">
-                            <h1 className="text-4xl md:text-6xl font-extrabold mb-4 tracking-tight leading-tight" style={{textShadow: '0 2px 4px rgba(0,0,0,0.5)'}}>Building Ireland's Future, One Project at a Time.</h1>
+                            <h1 className="text-4xl md:text-6xl font-extrabold mb-4 tracking-tight leading-tight" style={{textShadow: '0 2px 4px rgba(0,0,0,0.5)'}}>Building Ireland&apos;s Future, One Project at a Time.</h1>
                             <p className="text-lg md:text-xl max-w-3xl mx-auto mb-8 text-white" style={{textShadow: '0 1px 3px rgba(0,0,0,0.5)'}}>Expert craftsmanship in renovations, garden pods, and landscaping across Ireland.</p>
                             <a href="#contact" onClick={smoothScroll('contact')} className="bg-green-600 text-white font-bold py-4 px-10 rounded-lg text-lg hover:bg-green-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
                                 Request a Consultation
@@ -337,7 +338,7 @@ export default function App() {
                         <div className="container mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
                             <div>
                                 <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Why Choose Caleb Construction?</h2>
-                                <p className="text-gray-600 mb-8 text-lg">With over 20 years of experience serving communities across Ireland, we've built our reputation on a foundation of trust, quality, and unwavering commitment to client satisfaction. Our heritage is Irish, and our standards are international.</p>
+                                <p className="text-gray-600 mb-8 text-lg">With over 20 years of experience serving communities across Ireland, we&apos;ve built our reputation on a foundation of trust, quality, and unwavering commitment to client satisfaction. Our heritage is Irish, and our standards are international.</p>
                                 <div className="space-y-4">
                                     <div className="flex items-start"><CheckSquare className="w-6 h-6 text-green-600 mr-4 mt-1 flex-shrink-0" /><div><h4 className="font-semibold text-lg">Uncompromising Quality</h4><p className="text-gray-600">We use only the finest materials and employ skilled craftspeople to ensure a finish that lasts.</p></div></div>
                                     <div className="flex items-start"><Users className="w-6 h-6 text-green-600 mr-4 mt-1 flex-shrink-0" /><div><h4 className="font-semibold text-lg">Client-Centric Approach</h4><p className="text-gray-600">Your vision is our blueprint. We collaborate closely with you at every stage of the project.</p></div></div>
@@ -361,7 +362,7 @@ export default function App() {
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                                 {projects.map((project) => (
                                     <div key={project.id} className="group relative overflow-hidden rounded-xl shadow-lg">
-                                        <img src={project.imageUrl} alt={project.title} className="w-full h-72 object-cover transform group-hover:scale-110 transition-transform duration-500" />
+                                        <Image src={project.imageUrl} alt={project.title} width={400} height={288} className="w-full h-72 object-cover transform group-hover:scale-110 transition-transform duration-500" />
                                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
                                         <div className="absolute bottom-0 left-0 p-6 text-white">
                                             <span className="text-sm bg-green-600 px-2 py-1 rounded">{project.region}</span>
@@ -382,7 +383,7 @@ export default function App() {
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                                 {testimonials.map((testimonial, index) => (
                                     <div key={index} className="bg-white/10 p-8 rounded-xl backdrop-blur-sm">
-                                        <p className="text-lg italic mb-6">"{testimonial.quote}"</p>
+                                        <p className="text-lg italic mb-6">&ldquo;{testimonial.quote}&rdquo;</p>
                                         <div className="font-bold text-right">
                                             <span className="block">{testimonial.name}</span>
                                             <span className="text-sm text-green-200">{testimonial.region}</span>
